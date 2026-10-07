@@ -1,4 +1,3 @@
-// import { GitHub, Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
 
 function App() {
@@ -8,10 +7,10 @@ function App() {
     <>
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+<div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between -translate-y-1">
           <h2 className="text-2xl font-bold text-purple-500">Nadeem</h2>
 
-          <div className="hidden md:flex gap-8">
+          <div className="hidden md:flex items-center gap-8">
             <a
               href="#home"
               className="text-gray-300 hover:text-purple-400 transition"
@@ -52,6 +51,15 @@ function App() {
               className="text-gray-300 hover:text-purple-400 transition"
             >
               Contact
+            </a>
+
+            <a
+              href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-gray-600 hover:border-purple-400 text-white px-7 py-3 rounded-lg font-medium transition"
+            >
+              View Resume
             </a>
           </div>
           <button
@@ -109,6 +117,15 @@ function App() {
                   className="text-gray-300 hover:text-purple-400 transition"
                 >
                   Contact
+                </a>
+
+                <a
+                  href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-purple-400 transition"
+                >
+                  View Resume
                 </a>
               </div>
             </div>
@@ -460,32 +477,35 @@ function App() {
 
               <div className="flex gap-5 mt-6">
                 <a
-                  href="https://github.com/S-Nadeem-shariff"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-400 transition"
-                  aria-label="GitHub"
-                >
-                  {/* <GitHub size={28} /> */}
-                </a>
+  href="https://github.com/S-Nadeem-shariff"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="GitHub"
+  className="text-gray-400 hover:text-white transition flex items-center gap-2"
+>
+  <span className="text-xl">◉</span>
+  <span>GitHub</span>
+</a>
 
                 <a
-                  href="https://www.linkedin.com/in/nadeem-shariff-s/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-purple-400 transition"
-                  aria-label="LinkedIn"
-                >
-                  {/* <Linkedin size={28} /> */}
-                </a>
+  href="https://www.linkedin.com/in/nadeem-shariff-s/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="LinkedIn"
+  className="text-gray-400 hover:text-white transition flex items-center gap-2"
+>
+  <span className="text-xl">in</span>
+  <span>LinkedIn</span>
+</a>
 
                 <a
-                  href="mailto:46nadeemshariff@gmail.com"
-                  className="text-gray-400 hover:text-purple-400 transition"
-                  aria-label="Email"
-                >
-                  {/* <Mail size={28} /> */}
-                </a>
+  href="mailto:46nadeemshariff@gmail.com"
+  aria-label="Email"
+  className="text-gray-400 hover:text-white transition flex items-center gap-2"
+>
+  <span className="text-xl">✉</span>
+  <span>Email</span>
+</a>
               </div>
             </div>
           </div>
