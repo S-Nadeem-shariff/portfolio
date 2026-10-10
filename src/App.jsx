@@ -1,7 +1,18 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  
+useEffect(() => {
+  if (window.location.hash) {
+    requestAnimationFrame(() => {
+      const section = document.querySelector(window.location.hash);
+      section?.scrollIntoView({ behavior: "instant" });
+    });
+  }
+}, []);
+
 
   return (
     <>
@@ -53,14 +64,25 @@ function App() {
               Contact
             </a>
 
-            <a
-              href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-gray-600 hover:border-purple-400 text-white px-7 py-3 rounded-lg font-medium transition"
-            >
-              View Resume
-            </a>
+            <div className="flex gap-3">
+  <a
+    href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="border border-gray-600 text-white px-5 py-3 rounded-lg"
+  >
+    View Resume
+  </a>
+
+  <a
+    href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
+    download
+    className="bg-purple-600 text-white px-5 py-3 rounded-lg"
+  >
+    Download Resume
+  </a>
+</div>
+
           </div>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -119,14 +141,27 @@ function App() {
                   Contact
                 </a>
 
-                <a
-                  href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-purple-400 transition"
-                >
-                  View Resume
-                </a>
+                <div className="flex flex-col gap-4">
+  <a
+    href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-300 hover:text-purple-400 transition"
+  >
+    View Resume
+  </a>
+
+  <a
+    href="/S_Nadeem_Shariff_GUVI_Resume.pdf"
+    download="S_Nadeem_Shariff_GUVI_Resume.pdf"
+    className="text-gray-300 hover:text-purple-400 transition"
+  >
+    Download Resume
+  </a>
+</div>
+
+                
+
               </div>
             </div>
           )}
@@ -178,25 +213,33 @@ function App() {
 
         {/* About */}
         <section
-          id="about"
-          className="bg-gray-950 text-white px-6 md:px-16 py-24"
-        >
-          <div className="max-w-5xl mx-auto">
-            <p className="text-purple-400 font-semibold mb-3">GET TO KNOW ME</p>
+  id="about"
+  className="bg-gray-950 text-white px-6 md:px-16 py-24"
+>
+  <div className="max-w-5xl mx-auto">
+    <p className="text-purple-400 font-semibold mb-3">GET TO KNOW ME</p>
 
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">About Me</h2>
+    <h2 className="text-3xl md:text-4xl font-bold mb-10">About Me</h2>
 
-            <p className="text-gray-400 text-lg leading-8 max-w-3xl">
-              I'm a Full Stack Developer with hands-on experience building web
-              applications using React, JavaScript, Node.js, Express, and
-              MongoDB. I enjoy turning ideas into responsive and user-friendly
-              applications and continuously improving my development skills. I'm
-              looking for an opportunity where I can contribute to real-world
-              projects, learn from experienced developers, and grow as a
-              software developer.
-            </p>
-          </div>
-        </section>
+    <div className="flex flex-col md:flex-row items-center gap-10">
+      <img
+        src="/profile.jpeg"
+        alt="Nadeem Shariff"
+        className="w-48 h-56 object-cover rounded-2xl border-2 border-purple-500"
+      />
+
+      <p className="text-gray-400 text-lg leading-8 max-w-3xl">
+        I'm a Full Stack Developer with hands-on experience building web
+        applications using React, JavaScript, Node.js, Express, and
+        MongoDB. I enjoy turning ideas into responsive and user-friendly
+        applications and continuously improving my development skills. I'm
+        looking for an opportunity where I can contribute to real-world
+        projects, learn from experienced developers, and grow as a
+        software developer.
+      </p>
+    </div>
+  </div>
+</section>
 
         {/* Skills */}
         <section
@@ -261,6 +304,37 @@ function App() {
               </div>
             </div>
           </div>
+
+      <h3 className="text-xl font-semibold mb-4 mt-10">
+  Soft Skills
+</h3>
+
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+  <div className="border border-white/10 bg-gray-950 rounded-xl p-5 hover:border-purple-500 hover:-translate-y-1 transition">
+    <h3 className="font-semibold">Communication</h3>
+    <p className="text-gray-500 text-sm mt-1">Clear Communication</p>
+  </div>
+
+  <div className="border border-white/10 bg-gray-950 rounded-xl p-5 hover:border-purple-500 hover:-translate-y-1 transition">
+    <h3 className="font-semibold">Problem Solving</h3>
+    <p className="text-gray-500 text-sm mt-1">Analytical Thinking</p>
+  </div>
+
+  <div className="border border-white/10 bg-gray-950 rounded-xl p-5 hover:border-purple-500 hover:-translate-y-1 transition">
+    <h3 className="font-semibold">Teamwork</h3>
+    <p className="text-gray-500 text-sm mt-1">Collaboration</p>
+  </div>
+
+  <div className="border border-white/10 bg-gray-950 rounded-xl p-5 hover:border-purple-500 hover:-translate-y-1 transition">
+    <h3 className="font-semibold">Time Management</h3>
+    <p className="text-gray-500 text-sm mt-1">Task Prioritization</p>
+  </div>
+
+  <div className="border border-white/10 bg-gray-950 rounded-xl p-5 hover:border-purple-500 hover:-translate-y-1 transition">
+    <h3 className="font-semibold">Adaptability</h3>
+    <p className="text-gray-500 text-sm mt-1">Willingness to Learn</p>
+  </div>
+</div>
         </section>
 
         {/* Certifications */}
@@ -305,14 +379,14 @@ function App() {
           id="projects"
           className="bg-gray-950 text-white px-6 md:px-16 py-24"
         >
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <p className="text-purple-400 font-semibold mb-3">MY WORK</p>
 
             <h2 className="text-3xl md:text-4xl font-bold mb-10">Projects</h2>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-6">
               {/* Hostel Hub */}
-              <div className="border border-white/10 bg-black rounded-xl p-6 hover:border-purple-500 hover:-translate-y-2 transition">
+              <div className="border border-white/10 bg-black rounded-xl p-6 hover:border-purple-500 hover:-translate-y-1 transition">
                 <h3 className="text-xl font-bold mb-4">
                   Hostel Hub Management System
                 </h3>
@@ -340,7 +414,7 @@ function App() {
                   </span>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex flex-wrap gap-3">
                   <a
                     href="https://hostel-hub-management.netlify.app"
                     target="_blank"
@@ -350,166 +424,136 @@ function App() {
                     Live Demo
                   </a>
 
-                  <a
-                    href="https://github.com/S-Nadeem-shariff/hostel-hub-management"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-gray-700 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition"
-                  >
-                    GitHub
-                  </a>
+                  
+<a
+  href="https://github.com/S-Nadeem-shariff/hostel-hub-management/tree/main/client"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-gray-700 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition"
+>
+  Frontend GitHub
+</a>
+
+<a
+  href="https://github.com/S-Nadeem-shariff/hostel-hub-management/tree/main/server"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-gray-700 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition"
+>
+  Backend GitHub
+</a>
                 </div>
               </div>
-
-              {/* Movie Review */}
-              <div className="border border-white/10 bg-black rounded-xl p-6 hover:border-purple-500 hover:-translate-y-2 transition">
-                <h3 className="text-xl font-bold mb-4">
-                  Movie Review Application
-                </h3>
-
-                <p className="text-gray-400 leading-7 mb-5">
-                  A React-based movie review application where users can browse
-                  movies and interact with movie reviews.
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="text-xs bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full">
-                    React
-                  </span>
-
-                  <span className="text-xs bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full">
-                    JavaScript
-                  </span>
-
-                  <span className="text-xs bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full">
-                    CSS
-                  </span>
-                </div>
-
-                <div className="flex gap-3">
-                  <a
-                    href="https://movie-review-app-react-p1.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm transition"
-                  >
-                    Live Demo
-                  </a>
-
-                  <a
-                    href="https://github.com/S-Nadeem-shariff/movie-review-app-react-p1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-gray-700 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-
-              {/* Notes App */}
-              <div className="border border-white/10 bg-black rounded-xl p-6 hover:border-purple-500 hover:-translate-y-2 transition">
-                <h3 className="text-xl font-bold mb-4">Notes Application</h3>
-
-                <p className="text-gray-400 leading-7 mb-5">
-                  A simple React notes application for creating, editing,
-                  deleting and storing notes using browser storage.
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6">
-                  <span className="text-xs bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full">
-                    React
-                  </span>
-
-                  <span className="text-xs bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full">
-                    JavaScript
-                  </span>
-
-                  <span className="text-xs bg-purple-500/10 text-purple-300 px-3 py-1 rounded-full">
-                    LocalStorage
-                  </span>
-                </div>
-
-                <div className="flex gap-3">
-                  <a
-                    href="https://quicknotes-taking-app.netlify.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-lg text-sm transition"
-                  >
-                    Live Demo
-                  </a>
-
-                  <a
-                    href="https://github.com/S-Nadeem-shariff/notes-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="border border-gray-700 hover:border-purple-400 px-4 py-2 rounded-lg text-sm transition"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
+             
             </div>
           </div>
         </section>
 
         {/* Contact */}
-        <section
-          id="contact"
-          className="bg-black text-white px-6 md:px-16 py-24"
+      
+<section
+  id="contact"
+  className="bg-black text-white px-6 md:px-16 py-24"
+>
+  <div className="max-w-4xl mx-auto">
+    <div className="text-center">
+      <p className="text-purple-400 font-semibold mb-3">
+        GET IN TOUCH
+      </p>
+
+      <h2 className="text-3xl md:text-5xl font-bold mb-6">
+        Let's Work Together
+      </h2>
+
+      <p className="text-gray-400 text-lg leading-8 max-w-2xl mx-auto mb-10">
+        I'm currently looking for an opportunity as a Full Stack Developer
+        where I can apply my skills, learn from experienced developers,
+        and contribute to real-world projects.
+      </p>
+    </div>
+
+    <form
+  action="https://formsubmit.co/46nadeemshariff@gmail.com"
+  method="POST"
+  className="max-w-xl mx-auto space-y-5"
+>
+
+  <input
+  type="hidden"
+  name="_next"
+  // value="http://localhost:5173/#contact"
+  value="https://nadeem-shariff-portfolio.netlify.app/#contact"
+/>
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        aria-label="Your Name"
+        required
+        className="w-full rounded-lg border border-white/10 bg-gray-950 px-4 py-3 text-white outline-none focus:border-purple-500"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        aria-label="Your Email"
+        required
+        className="w-full rounded-lg border border-white/10 bg-gray-950 px-4 py-3 text-white outline-none focus:border-purple-500"
+      />
+
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        aria-label="Your Message"
+        rows="5"
+        required
+        className="w-full rounded-lg border border-white/10 bg-gray-950 px-4 py-3 text-white outline-none focus:border-purple-500"
+      />
+
+      <button
+        type="submit"
+        className="w-full rounded-lg bg-purple-600 px-6 py-3 font-semibold transition hover:bg-purple-700"
+      >
+        Send Message
+      </button>
+    </form>
+
+    <div className="mt-12 flex flex-col items-center gap-4">
+      <p className="text-gray-300">
+        📍 Chennai, Tamil Nadu, India
+      </p>
+
+      <div className="flex flex-wrap justify-center gap-5 mt-2">
+        <a
+          href="https://github.com/S-Nadeem-shariff"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-white transition"
         >
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-purple-400 font-semibold mb-3">GET IN TOUCH</p>
+          ◉ GitHub
+        </a>
 
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              Let's Work Together
-            </h2>
+        <a
+          href="https://www.linkedin.com/in/nadeem-shariff-s/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-400 hover:text-white transition"
+        >
+          in LinkedIn
+        </a>
 
-            <p className="text-gray-400 text-lg leading-8 max-w-2xl mx-auto mb-10">
-              I'm currently looking for an opportunity as a Full Stack Developer
-              where I can apply my skills, learn from experienced developers,
-              and contribute to real-world projects.
-            </p>
+        <a
+          href="mailto:46nadeemshariff@gmail.com"
+          className="text-gray-400 hover:text-white transition"
+        >
+          ✉ Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <div className="flex flex-col items-center gap-4">
-              <p className="text-gray-300">📍 Chennai, Tamil Nadu, India</p>
-
-              <div className="flex gap-5 mt-6">
-                <a
-  href="https://github.com/S-Nadeem-shariff"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="GitHub"
-  className="text-gray-400 hover:text-white transition flex items-center gap-2"
->
-  <span className="text-xl">◉</span>
-  <span>GitHub</span>
-</a>
-
-                <a
-  href="https://www.linkedin.com/in/nadeem-shariff-s/"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="LinkedIn"
-  className="text-gray-400 hover:text-white transition flex items-center gap-2"
->
-  <span className="text-xl">in</span>
-  <span>LinkedIn</span>
-</a>
-
-                <a
-  href="mailto:46nadeemshariff@gmail.com"
-  aria-label="Email"
-  className="text-gray-400 hover:text-white transition flex items-center gap-2"
->
-  <span className="text-xl">✉</span>
-  <span>Email</span>
-</a>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       {/* Footer */}
