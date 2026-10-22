@@ -180,7 +180,7 @@ useEffect(() => {
             </p>
 
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4">
-              Nadeem Shariff
+              S Nadeem Shariff
             </h1>
 
             <h2 className="text-2xl md:text-4xl font-semibold text-gray-300 mb-6">
@@ -560,7 +560,7 @@ useEffect(() => {
       <footer className="bg-gray-950 border-t border-white/10 text-gray-500 py-8">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © 2026 Nadeem Shariff. All rights reserved.
+            © 2026 S Nadeem Shariff. All rights reserved.
           </p>
 
           <p className="text-sm mt-2">Built with React and Tailwind CSS</p>
